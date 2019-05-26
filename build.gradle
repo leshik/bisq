@@ -137,7 +137,9 @@ configure(project(':assets')) {
             exclude(module: 'slf4j-api')
             exclude(module: 'guava')
             exclude(module: 'protobuf-java')
+            exclude(module: 'scrypt')
         }
+        compile 'com.github.leshik:scrypt:1.4.0-arm'
         compile 'com.google.guava:guava:20.0'
         compile "org.slf4j:slf4j-api:$slf4jVersion"
         compile "commons-codec:commons-codec:$codecVersion"
@@ -180,7 +182,9 @@ configure(project(':common')) {
             exclude(module: 'slf4j-api')
             exclude(module: 'guava')
             exclude(module: 'protobuf-java')
+            exclude(module: 'scrypt')
         }
+        compile 'com.github.leshik:scrypt:1.4.0-arm'
         compile 'org.jetbrains:annotations:13.0'
         runtime "org.bouncycastle:bcprov-jdk15on:$bcVersion"
         compile "org.bouncycastle:bcpg-jdk15on:$bcVersion"
@@ -195,10 +199,10 @@ configure(project(':common')) {
 configure(project(':p2p')) {
     dependencies {
         compile project(':common')
-        compile('com.github.JesusMcCloud.netlayer:tor.native:0.6.5') {
+        compile('com.github.leshik.netlayer:tor.native:0.6.5-arm') {
             exclude(module: 'slf4j-api')
         }
-        compile('com.github.JesusMcCloud.netlayer:tor.external:0.6.5') {
+        compile('com.github.leshik.netlayer:tor.external:0.6.5-arm') {
             exclude(module: 'slf4j-api')
         }
         compile('org.apache.httpcomponents:httpclient:4.5.3') {
